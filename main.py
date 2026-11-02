@@ -14,3 +14,12 @@ rocket_bottom = sphere(pos=vec(-0.5, 0, 0), radius=0.5, color=color.orange, emis
 fire = cone(pos=vec(-0.5, 0, 0), axis=vec(-1.5, 0, 0), radius=0.5, color=color.red, emissive=False)
 
 rocket = compound([rocket_body, rocket_top, rocket_window, fuel_tank1, fuel_tank2, wing_left, wing_right, wing_back, rocket_bottom, fire])
+
+while True :
+    rate(100)
+    k = keysdown()
+    if 'left' in k :
+        rocket.pos.x = rocket.pos.x - 0.1
+    if 'right' in k :
+        rocket.pos.x += 0.1
+        
